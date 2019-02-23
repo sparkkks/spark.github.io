@@ -96,24 +96,24 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="模块.组件.插件这些都是代码复用的工具 是一组给定功能的实现模块和组件相较而言 更加灵活 接入性好 插件更好 ;功能性模块通常放在一个独立的脚本文件中 具有封装性 通过接口来访问">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/02/21/hello-world/index.html">
+<meta property="og:title" content="自定义模块">
+<meta property="og:url" content="http://yoursite.com/2019/02/22/自定义模块/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="模块.组件.插件这些都是代码复用的工具 是一组给定功能的实现模块和组件相较而言 更加灵活 接入性好 插件更好 ;功能性模块通常放在一个独立的脚本文件中 具有封装性 通过接口来访问">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-21T11:32:19.732Z">
+<meta property="og:updated_time" content="2019-02-22T08:16:46.535Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="自定义模块">
+<meta name="twitter:description" content="模块.组件.插件这些都是代码复用的工具 是一组给定功能的实现模块和组件相较而言 更加灵活 接入性好 插件更好 ;功能性模块通常放在一个独立的脚本文件中 具有封装性 通过接口来访问">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/21/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/22/自定义模块/">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>Hello World | Hexo</title>
+  <title>自定义模块 | Hexo</title>
   
 
 
@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/自定义模块/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -305,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">自定义模块
 
               
             
@@ -331,9 +331,13 @@
                 
               
 
-              <time title="创建时间：2019-02-21 19:32:19" itemprop="dateCreated datePublished" datetime="2019-02-21T19:32:19+08:00">2019-02-21</time>
+              <time title="创建时间：2019-02-22 15:52:40 / 修改时间：16:16:46" itemprop="dateCreated datePublished" datetime="2019-02-22T15:52:40+08:00">2019-02-22</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -366,15 +370,7 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p><strong>模块.组件.插件这些都是代码复用的工具 是一组给定功能的实现</strong><br><strong>模块和组件相较而言 更加灵活 接入性好 插件更好 ;</strong><br><strong>功能性模块通常放在一个独立的脚本文件中 具有封装性 通过接口来访问 </strong></p>
 
       
     </div>
@@ -405,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/18/2019-02-17-markdown/" rel="next" title="MarkDown语法">
-                <i class="fa fa-chevron-left"></i> MarkDown语法
+              <a href="/2019/02/22/super调用/" rel="next" title="super调用">
+                <i class="fa fa-chevron-left"></i> super调用
               </a>
             
           </div>
@@ -415,8 +411,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/21/hello/" rel="prev" title="extends">
-                extends <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/22/es6模块定义/" rel="prev" title="es6模块定义">
+                es6模块定义 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -466,17 +462,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -550,23 +537,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
