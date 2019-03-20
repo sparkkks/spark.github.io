@@ -96,24 +96,24 @@
 
 
 
-  <meta name="description" content="普通的成员属性和方法属于实例对象而静态成员 (属性和方法)  属于类或者构造函数 可以被所有实例对象共享静态方法  多用于创建一个应用程序的实例 123function  Circle (r) &amp;#123;    this.radius = r;&amp;#125; 对于不变的和需要被共享数据 设置静态属性 123456789Circle.PI = 3.14;Circle.prototype = &amp;#12">
+  <meta name="description" content="拖拽事件要实现拖拽 两点:  被拖拽物必须可拖拽 目标区域可接收拖拽物  拖拽源/被拖拽物体 的位置1234被拖拽物的容器里必须有 draggable=&quot;true&quot;属性 &amp;lt;div class=&quot;source&quot;&amp;gt;        &amp;lt;img src=&quot;libs/logo.png&quot; alt=&quot;&quot; draggable=&quot;true&quot;&amp;gt; &amp;lt;/div&amp;gt; 存放拖拽物的目标区域1&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="static">
-<meta property="og:url" content="http://yoursite.com/2019/02/22/static/index.html">
+<meta property="og:title" content="拖拽事件">
+<meta property="og:url" content="http://yoursite.com/2019/03/05/拖拽事件/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="普通的成员属性和方法属于实例对象而静态成员 (属性和方法)  属于类或者构造函数 可以被所有实例对象共享静态方法  多用于创建一个应用程序的实例 123function  Circle (r) &amp;#123;    this.radius = r;&amp;#125; 对于不变的和需要被共享数据 设置静态属性 123456789Circle.PI = 3.14;Circle.prototype = &amp;#12">
+<meta property="og:description" content="拖拽事件要实现拖拽 两点:  被拖拽物必须可拖拽 目标区域可接收拖拽物  拖拽源/被拖拽物体 的位置1234被拖拽物的容器里必须有 draggable=&quot;true&quot;属性 &amp;lt;div class=&quot;source&quot;&amp;gt;        &amp;lt;img src=&quot;libs/logo.png&quot; alt=&quot;&quot; draggable=&quot;true&quot;&amp;gt; &amp;lt;/div&amp;gt; 存放拖拽物的目标区域1&amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-22T06:59:44.055Z">
+<meta property="og:updated_time" content="2019-03-05T09:29:56.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="static">
-<meta name="twitter:description" content="普通的成员属性和方法属于实例对象而静态成员 (属性和方法)  属于类或者构造函数 可以被所有实例对象共享静态方法  多用于创建一个应用程序的实例 123function  Circle (r) &amp;#123;    this.radius = r;&amp;#125; 对于不变的和需要被共享数据 设置静态属性 123456789Circle.PI = 3.14;Circle.prototype = &amp;#12">
+<meta name="twitter:title" content="拖拽事件">
+<meta name="twitter:description" content="拖拽事件要实现拖拽 两点:  被拖拽物必须可拖拽 目标区域可接收拖拽物  拖拽源/被拖拽物体 的位置1234被拖拽物的容器里必须有 draggable=&quot;true&quot;属性 &amp;lt;div class=&quot;source&quot;&amp;gt;        &amp;lt;img src=&quot;libs/logo.png&quot; alt=&quot;&quot; draggable=&quot;true&quot;&amp;gt; &amp;lt;/div&amp;gt; 存放拖拽物的目标区域1&amp;">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/22/static/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/05/拖拽事件/">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>static | Hexo</title>
+  <title>拖拽事件 | Hexo</title>
   
 
 
@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/static/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/拖拽事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -305,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">static
+          <h1 class="post-title" itemprop="name headline">拖拽事件
 
               
             
@@ -331,7 +331,7 @@
                 
               
 
-              <time title="创建时间：2019-02-22 14:34:08 / 修改时间：14:59:44" itemprop="dateCreated datePublished" datetime="2019-02-22T14:34:08+08:00">2019-02-22</time>
+              <time title="创建时间：2019-03-05 14:43:02 / 修改时间：17:29:56" itemprop="dateCreated datePublished" datetime="2019-03-05T14:43:02+08:00">2019-03-05</time>
             
 
             
@@ -370,13 +370,15 @@
       
 
       
-        <h1 id><a href="#" class="headerlink" title></a><static></static></h1><p>普通的成员属性和方法属于实例对象<br>而静态成员 (属性和方法)  属于类或者构造函数 可以被所有实例对象共享<br>静态方法  多用于创建一个应用程序的实例</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">Circle</span> (<span class="params">r</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.radius = r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于不变的和需要被共享数据 设置静态属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Circle.PI = <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line">Circle.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Cirle,</span><br><span class="line">    area: function ()&#123;</span><br><span class="line">        <span class="comment">//this 为实例对象 this.constructor 伪构造函数</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.constructor.PI * <span class="keyword">this</span>.radius * <span class="keyword">this</span>.radius;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>把不依赖于对象或者用来操作对象的方法  设为静态方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Circle.max = <span class="function"><span class="keyword">function</span> (<span class="params">c1, c2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c1.radius &gt; c2.radius ? c1 : c2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c1 = <span class="keyword">new</span> Circle (<span class="number">10</span>),</span><br><span class="line">    c2 = <span class="keyword">new</span> Circle (<span class="number">20</span>);</span><br><span class="line"><span class="built_in">console</span>.log(c1.area());  <span class="comment">//314</span></span><br><span class="line"><span class="built_in">console</span>.log(Circle.max(c1,c2)); <span class="comment">//c2</span></span><br></pre></td></tr></table></figure>
-<h2 id="通常面向对象中-使用-static-来声明静态方法"><a href="#通常面向对象中-使用-static-来声明静态方法" class="headerlink" title="通常面向对象中,使用 static 来声明静态方法"></a>通常面向对象中,使用 static 来声明静态方法</h2><h2 id="es6-class-语法中支持-ststic-定义静态方法-但是静态属性-还要早类上定义"><a href="#es6-class-语法中支持-ststic-定义静态方法-但是静态属性-还要早类上定义" class="headerlink" title="es6 class 语法中支持 ststic 定义静态方法  但是静态属性 还要早类上定义"></a>es6 class 语法中支持 ststic 定义静态方法  但是静态属性 还要早类上定义</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span> (name, r) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.radius = r;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    area () &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.constructor.PI * <span class="keyword">this</span>.radius * <span class="keyword">this</span>.radius;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">static</span> max(c1,c2) &#123;</span><br><span class="line">         <span class="keyword">return</span> c1.radius &gt; c2.radius ? c1.name : c2.name;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Circle.PI = <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建实例对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c1 = <span class="keyword">new</span> Circle(<span class="string">"汤圆"</span>,<span class="number">10</span>),</span><br><span class="line">    c2 = <span class="keyword">new</span> Circle(<span class="string">"程序员"</span>,<span class="number">20</span>);</span><br><span class="line"><span class="built_in">console</span>.log(c1.area()); <span class="comment">//314</span></span><br><span class="line"><span class="built_in">console</span>.log(Circle.max(c1,c2)); <span class="comment">//程序员</span></span><br></pre></td></tr></table></figure>
+        <h3 id="拖拽事件"><a href="#拖拽事件" class="headerlink" title="拖拽事件"></a>拖拽事件</h3><p>要实现拖拽 两点:</p>
+<ol>
+<li>被拖拽物必须可拖拽</li>
+<li>目标区域可接收拖拽物</li>
+</ol>
+<p>拖拽源/被拖拽物体 的位置<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">被拖拽物的容器里必须有 draggable="true"属性</span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"source"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"libs/logo.png"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>存放拖拽物的目标区域<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"target"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>设置两个容器的 source target<br> width height border</p>
+<p>script中设置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"DOMContentLoaded"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 获取拖拽物</span></span><br><span class="line">    <span class="keyword">const</span> source = <span class="built_in">document</span>.querySelector(<span class="string">".source"</span>),</span><br><span class="line">        target = <span class="built_in">document</span>.querySelector(<span class="string">".target"</span>),</span><br><span class="line">        img = source.querySelector(<span class="string">"img"</span>);</span><br><span class="line">        <span class="comment">//拖拽事件 多数 以drag开始 它分为两个:</span></span><br><span class="line">        <span class="comment">//一个是在拖拽源所在区域 拖拽时拖拽源触发的事件</span></span><br><span class="line">        <span class="comment">//另一个是离开拖拽位置到达目标区域时 可以给目标区域添加拖拽监听的事件</span></span><br><span class="line">        img.ondragstart = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"开始拖拽"</span>);</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="comment">//该事件在拖拽过程中 间隔几毫秒持续触发 除非其他时间打断</span></span><br><span class="line">        img.ondrag = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"拖拽中..."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 该事件拖拽物离开所在的区域</span></span><br><span class="line">        img.ondragleave = <span class="function"><span class="keyword">function</span> (<span class="params"> </span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"离开所在的区域 "</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 接下来是 被拖拽物到达 目标的区域 设置拖拽的监听</span></span><br><span class="line">        <span class="comment">//接收的容器来接收</span></span><br><span class="line">        target.ondragenter =  <span class="function"><span class="keyword">function</span>  (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"拖拽物来啦!!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//over事件是一个状态事件  它同drag 一样 是持续触发的事件</span></span><br><span class="line">        <span class="comment">//不同的是 drag是拖拽源监听的 over 是目标元素监听的事件</span></span><br><span class="line">        target.ondragover = <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>)</span>&#123;</span><br><span class="line">            evt.preventDefault();</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"被拖拽物放下"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//放下拖拽物时触发的事件 一般拖拽行为的控制 都在该函数中完成</span></span><br><span class="line">        target.ondrop = <span class="function"><span class="keyword">function</span> (<span class="params">evt</span>) </span>&#123;</span><br><span class="line">            evt.preventDefault();</span><br><span class="line">            evt.stopPropagation();</span><br><span class="line">            <span class="keyword">this</span>.appendChild(img);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -407,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/21/hello/" rel="next" title="extends">
-                <i class="fa fa-chevron-left"></i> extends
+              <a href="/2019/02/26/Map类型/" rel="next" title="Map类型">
+                <i class="fa fa-chevron-left"></i> Map类型
               </a>
             
           </div>
@@ -417,8 +419,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/22/super调用/" rel="prev" title="super调用">
-                super调用 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/05/演示拖拽文本/" rel="prev" title="演示拖拽文本">
+                演示拖拽文本 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -563,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通常面向对象中-使用-static-来声明静态方法"><span class="nav-number">1.1.</span> <span class="nav-text">通常面向对象中,使用 static 来声明静态方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#es6-class-语法中支持-ststic-定义静态方法-但是静态属性-还要早类上定义"><span class="nav-number">1.2.</span> <span class="nav-text">es6 class 语法中支持 ststic 定义静态方法  但是静态属性 还要早类上定义</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#拖拽事件"><span class="nav-number">1.</span> <span class="nav-text">拖拽事件</span></a></li></ol></div>
             
 
           </div>

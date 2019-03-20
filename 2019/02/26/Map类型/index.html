@@ -96,24 +96,24 @@
 
 
 
-  <meta name="description" content="普通的成员属性和方法属于实例对象而静态成员 (属性和方法)  属于类或者构造函数 可以被所有实例对象共享静态方法  多用于创建一个应用程序的实例 123function  Circle (r) &amp;#123;    this.radius = r;&amp;#125; 对于不变的和需要被共享数据 设置静态属性 123456789Circle.PI = 3.14;Circle.prototype = &amp;#12">
+  <meta name="description" content="Map类型Map创建键值对的数据集合 支持各种类型的索引 (键.属性) 它是建立一个名和值的映射关系1var map = new Map(); 创建不同类型的索引123var str = &quot;hello&quot;,    obj = &amp;#123;&amp;#125;,    fn = () =&amp;gt; &amp;#123;&amp;#125;; 使用set方法 向map写入值12345map.set(str,&quot;字符串索引&quot;);ma">
 <meta property="og:type" content="article">
-<meta property="og:title" content="static">
-<meta property="og:url" content="http://yoursite.com/2019/02/22/static/index.html">
+<meta property="og:title" content="Map类型">
+<meta property="og:url" content="http://yoursite.com/2019/02/26/Map类型/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="普通的成员属性和方法属于实例对象而静态成员 (属性和方法)  属于类或者构造函数 可以被所有实例对象共享静态方法  多用于创建一个应用程序的实例 123function  Circle (r) &amp;#123;    this.radius = r;&amp;#125; 对于不变的和需要被共享数据 设置静态属性 123456789Circle.PI = 3.14;Circle.prototype = &amp;#12">
+<meta property="og:description" content="Map类型Map创建键值对的数据集合 支持各种类型的索引 (键.属性) 它是建立一个名和值的映射关系1var map = new Map(); 创建不同类型的索引123var str = &quot;hello&quot;,    obj = &amp;#123;&amp;#125;,    fn = () =&amp;gt; &amp;#123;&amp;#125;; 使用set方法 向map写入值12345map.set(str,&quot;字符串索引&quot;);ma">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-22T06:59:44.055Z">
+<meta property="og:updated_time" content="2019-02-26T11:54:08.104Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="static">
-<meta name="twitter:description" content="普通的成员属性和方法属于实例对象而静态成员 (属性和方法)  属于类或者构造函数 可以被所有实例对象共享静态方法  多用于创建一个应用程序的实例 123function  Circle (r) &amp;#123;    this.radius = r;&amp;#125; 对于不变的和需要被共享数据 设置静态属性 123456789Circle.PI = 3.14;Circle.prototype = &amp;#12">
+<meta name="twitter:title" content="Map类型">
+<meta name="twitter:description" content="Map类型Map创建键值对的数据集合 支持各种类型的索引 (键.属性) 它是建立一个名和值的映射关系1var map = new Map(); 创建不同类型的索引123var str = &quot;hello&quot;,    obj = &amp;#123;&amp;#125;,    fn = () =&amp;gt; &amp;#123;&amp;#125;; 使用set方法 向map写入值12345map.set(str,&quot;字符串索引&quot;);ma">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/22/static/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/26/Map类型/">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>static | Hexo</title>
+  <title>Map类型 | Hexo</title>
   
 
 
@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/static/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/Map类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -305,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">static
+          <h1 class="post-title" itemprop="name headline">Map类型
 
               
             
@@ -331,7 +331,7 @@
                 
               
 
-              <time title="创建时间：2019-02-22 14:34:08 / 修改时间：14:59:44" itemprop="dateCreated datePublished" datetime="2019-02-22T14:34:08+08:00">2019-02-22</time>
+              <time title="创建时间：2019-02-26 19:42:05 / 修改时间：19:54:08" itemprop="dateCreated datePublished" datetime="2019-02-26T19:42:05+08:00">2019-02-26</time>
             
 
             
@@ -370,13 +370,10 @@
       
 
       
-        <h1 id><a href="#" class="headerlink" title></a><static></static></h1><p>普通的成员属性和方法属于实例对象<br>而静态成员 (属性和方法)  属于类或者构造函数 可以被所有实例对象共享<br>静态方法  多用于创建一个应用程序的实例</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">Circle</span> (<span class="params">r</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.radius = r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于不变的和需要被共享数据 设置静态属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Circle.PI = <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line">Circle.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Cirle,</span><br><span class="line">    area: function ()&#123;</span><br><span class="line">        <span class="comment">//this 为实例对象 this.constructor 伪构造函数</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.constructor.PI * <span class="keyword">this</span>.radius * <span class="keyword">this</span>.radius;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>把不依赖于对象或者用来操作对象的方法  设为静态方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Circle.max = <span class="function"><span class="keyword">function</span> (<span class="params">c1, c2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c1.radius &gt; c2.radius ? c1 : c2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c1 = <span class="keyword">new</span> Circle (<span class="number">10</span>),</span><br><span class="line">    c2 = <span class="keyword">new</span> Circle (<span class="number">20</span>);</span><br><span class="line"><span class="built_in">console</span>.log(c1.area());  <span class="comment">//314</span></span><br><span class="line"><span class="built_in">console</span>.log(Circle.max(c1,c2)); <span class="comment">//c2</span></span><br></pre></td></tr></table></figure>
-<h2 id="通常面向对象中-使用-static-来声明静态方法"><a href="#通常面向对象中-使用-static-来声明静态方法" class="headerlink" title="通常面向对象中,使用 static 来声明静态方法"></a>通常面向对象中,使用 static 来声明静态方法</h2><h2 id="es6-class-语法中支持-ststic-定义静态方法-但是静态属性-还要早类上定义"><a href="#es6-class-语法中支持-ststic-定义静态方法-但是静态属性-还要早类上定义" class="headerlink" title="es6 class 语法中支持 ststic 定义静态方法  但是静态属性 还要早类上定义"></a>es6 class 语法中支持 ststic 定义静态方法  但是静态属性 还要早类上定义</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span> (name, r) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.radius = r;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    area () &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.constructor.PI * <span class="keyword">this</span>.radius * <span class="keyword">this</span>.radius;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">static</span> max(c1,c2) &#123;</span><br><span class="line">         <span class="keyword">return</span> c1.radius &gt; c2.radius ? c1.name : c2.name;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Circle.PI = <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建实例对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c1 = <span class="keyword">new</span> Circle(<span class="string">"汤圆"</span>,<span class="number">10</span>),</span><br><span class="line">    c2 = <span class="keyword">new</span> Circle(<span class="string">"程序员"</span>,<span class="number">20</span>);</span><br><span class="line"><span class="built_in">console</span>.log(c1.area()); <span class="comment">//314</span></span><br><span class="line"><span class="built_in">console</span>.log(Circle.max(c1,c2)); <span class="comment">//程序员</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Map类型"><a href="#Map类型" class="headerlink" title="Map类型"></a>Map类型</h1><p><strong>Map创建键值对的数据集合 支持各种类型的索引 (键.属性) 它是建立一个名和值的映射关系</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br></pre></td></tr></table></figure></p>
+<p>创建不同类型的索引<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"hello"</span>,</span><br><span class="line">    obj = &#123;&#125;,</span><br><span class="line">    fn = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>使用set方法 向map写入值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">map.set(str,<span class="string">"字符串索引"</span>);</span><br><span class="line">map.set(obj,<span class="string">"对象索引的值"</span>);</span><br><span class="line">map.set(fn,<span class="string">"函数索引的值"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(map);<span class="comment">//Map(3) &#123; hello → "字符串索引", &#123;&#125; → "对象索引的值", fn() → "函数索引的值" &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用get方法 读取map元素的值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(map.get(str),map.get(<span class="string">"hello"</span>));<span class="comment">//字符串索引 字符串索引</span></span><br><span class="line"><span class="built_in">console</span>.log(map.get(obj),map.get(&#123;&#125;));<span class="comment">//对象索引的值 undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(map.get(fn));<span class="comment">//函数索引的值</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -407,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/21/hello/" rel="next" title="extends">
-                <i class="fa fa-chevron-left"></i> extends
+              <a href="/2019/02/26/函数参数-fn-iterable/" rel="next" title="函数参数:fn([...iterable])">
+                <i class="fa fa-chevron-left"></i> 函数参数:fn([...iterable])
               </a>
             
           </div>
@@ -417,8 +414,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/22/super调用/" rel="prev" title="super调用">
-                super调用 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/05/拖拽事件/" rel="prev" title="拖拽事件">
+                拖拽事件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -563,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通常面向对象中-使用-static-来声明静态方法"><span class="nav-number">1.1.</span> <span class="nav-text">通常面向对象中,使用 static 来声明静态方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#es6-class-语法中支持-ststic-定义静态方法-但是静态属性-还要早类上定义"><span class="nav-number">1.2.</span> <span class="nav-text">es6 class 语法中支持 ststic 定义静态方法  但是静态属性 还要早类上定义</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Map类型"><span class="nav-number">1.</span> <span class="nav-text">Map类型</span></a></li></ol></div>
             
 
           </div>
