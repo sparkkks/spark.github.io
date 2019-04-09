@@ -285,6 +285,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/模板字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/23/模板字符串/" class="post-title-link" itemprop="url">模板字符串</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-23 14:36:03 / 修改时间：14:47:14" itemprop="dateCreated datePublished" datetime="2019-02-23T14:36:03+08:00">2019-02-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p><strong>ES5 ES6字符串的区别</strong></p>
+<p>声明<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> title = <span class="string">"我们是菜鸟!!!!"</span></span><br></pre></td></tr></table></figure></p>
+<p>ES5:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tal1 = <span class="string">'&lt;div&gt;'</span>+</span><br><span class="line">    <span class="string">'&lt;span&gt;'</span>+title+<span class="string">'&lt;/span&gt;'</span></span><br><span class="line"><span class="string">'&lt;/div&gt;'</span></span><br></pre></td></tr></table></figure></p>
+<p>ES6:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tal2 = <span class="string">`</span></span><br><span class="line"><span class="string">&lt;div&gt;</span></span><br><span class="line"><span class="string">    &lt;span&gt;<span class="subst">$&#123;title&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;`</span></span><br></pre></td></tr></table></figure></p>
+<p>console.log(tal1);  //我们是菜鸟!!!!<br>console.log(tal2);  //我们是菜鸟!!!!</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/es6模块定义/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1390,7 +1537,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

@@ -285,6 +285,395 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/微信小程序API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/09/微信小程序API/" class="post-title-link" itemprop="url">微信小程序API</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-09 23:34:17 / 修改时间：23:34:51" itemprop="dateCreated datePublished" datetime="2019-04-09T23:34:17+08:00">2019-04-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><h2 id="1-路由API"><a href="#1-路由API" class="headerlink" title="1. 路由API"></a>1. 路由API</h2><pre><code>跟界面切换相关的API
+
+复习:
+
+    A =&gt; B
+        组件:  &lt;navigator url=&quot;/pages/b/b&quot;&gt;
+        API:    wx.navigateTo({
+            url:&quot;/pages/b/b&quot;
+        })
+
+
+   A =&gt; B 返回 A
+        导航栏左上角 自动添加返回按钮
+        API:    wx.navigateBack()
+
+
+    A界面, B界面替换A界面
+        组件:  &lt;navigator url=&quot;/pages/b/b&quot; open-type=&quot;redirect&quot;&gt;
+        API:    wx.redirectTo({
+            url:&quot;/pages/b/b&quot;
+        })
+
+
+    tabbar(A,B,C,D)
+        组件:  &lt;navigator url=&quot;/pages/b/b&quot; open-type=&quot;switchTab&quot;&gt;
+        API:    wx.switchTab({
+            url:&quot;/pages/b/b&quot;
+        })
+</code></pre><h2 id="2-界面交互API"><a href="#2-界面交互API" class="headerlink" title="2.界面交互API"></a>2.界面交互API</h2><pre><code>消息框
+
+    q.基本使用
+
+        wx.showToast({
+            title: &apos;注册成功注册成功,注册成功,注册成功&apos;,
+        })
+
+        注意: 最多显示7个汉字
+
+    q.额外属性
+        //duration 持续时间
+        wx.showToast({
+            title: &apos;注册成功注册成功,注册成功,注册成功&apos;,
+            duration: 4000
+        })
+
+
+
+模态框
+    q.基本使用
+        wx.showModal({
+            title: &apos;我是标题&apos;,
+            content: &apos;注册成功注册成功,注册成功,注册成功注册成功注册成功,注册成功,注册成功&apos;,
+        })
+
+    q.其他使用
+        //添加点击确定回调, shoCancle 不显示取消按钮
+        wx.showModal({
+            title: &apos;我是标题&apos;,
+            content: &apos;注册成功注册成功,注册成功,注册成功注册成功注册成功,注册成功,注册成功&apos;,
+            success: function(){
+                console.log(&quot;ok&quot;)
+            },
+            showCancel:false
+        })
+
+
+loading/关闭loading
+
+    q.基本使用
+        //开始下载前显示loading
+        wx.showLoading({
+            title: &apos;正在加载中&apos;,
+        })
+
+        //模拟数据下载
+        setTimeout(function(){
+
+            //一定要放在, 数据下载回调函数中
+            wx.hideLoading()
+
+        },3000)
+</code></pre><h2 id="3-界面tabbar标签"><a href="#3-界面tabbar标签" class="headerlink" title="3. 界面tabbar标签"></a>3. 界面tabbar标签</h2><pre><code>标签栏设置(小红点, 显示和隐藏标签栏)
+
+显示小红点
+    q.如何显示
+        onLoad或者onReady执行函数
+        wx.showTabBarRedDot({
+            index: 1,
+        })
+
+        注意: index表示序号, 默认从0开始
+
+显示标签栏附加文本
+
+    q.基本使用
+    wx.setTabBarBadge({
+        index: 0,
+        text: &apos;99+&apos;,
+    })
+
+
+显示或者隐藏标签栏
+
+    注意: 在其他界面上, 会自动隐藏, 手动隐藏通过API
+    dealShow(){
+        wx.showTabBar({
+
+        })
+    },
+
+    dealHide() {
+        wx.hideTabBar({
+
+        })
+    },
+</code></pre><h2 id="4-界面下拉刷新和加载更多"><a href="#4-界面下拉刷新和加载更多" class="headerlink" title="4.界面下拉刷新和加载更多"></a>4.界面下拉刷新和加载更多</h2><pre><code>复习:
+
+下拉刷新
+    注意配置
+        &quot;enablePullDownRefresh&quot;:true
+
+    生命周期函数
+        onPullDownRefresh: function () {
+
+        },
+
+到达底部-加载更多
+    onReachBottom: function () {
+
+    }
+</code></pre><h2 id="5-网络请求-最常用的功能"><a href="#5-网络请求-最常用的功能" class="headerlink" title="5.网络请求(最常用的功能)"></a>5.网络请求(最常用的功能)</h2><pre><code>请求类型
+    GET
+    POST
+    POST(上传文件)
+
+GET请求和POST
+    GET: 
+    wx.request({
+        url:&quot;&quot;,
+        data:{},
+        method:&quot;GET&quot;,
+        success:(res)=&gt;{
+
+        }
+    })
+
+    POST: 
+    wx.request({
+        url:&quot;&quot;,
+        data:{},
+        method:&quot;POST&quot;,
+        success:(res)=&gt;{
+
+        }
+    })
+
+上传文件
+    wx.uploadFile(Object object)
+
+    文艺范项目:  上传用户头像
+</code></pre><h2 id="6-持久化数据存储"><a href="#6-持久化数据存储" class="headerlink" title="6.持久化数据存储()"></a>6.持久化数据存储()</h2><pre><code>简介:
+    存储一个登陆信息, 下次启动再用
+    html - localStorage 存储, cookie, html5(WebSQL, Indexed DB)
+    微信 类似
+
+    场景: 记住用户名
+
+
+q.基本操作
+
+    存储值: wx.setStorageSync(&quot;name&quot;, arr);
+    获取值: var name = wx.getStorageSync(&quot;name&quot;)
+    移除值: wx.removeStorageSync(&quot;name&quot;)
+    清除所有: wx.clearStorageSync()
+
+    注意: Sync表示同步, 函数执行完了操作也完了
+</code></pre><h2 id="7-定位API"><a href="#7-定位API" class="headerlink" title="7.定位API"></a>7.定位API</h2><pre><code>复习: 
+    wx.getLocation() 定位
+
+    //打开地图位置
+    wx.openLocation(Object object)
+</code></pre><h2 id="8-用户登陆-用户信息"><a href="#8-用户登陆-用户信息" class="headerlink" title="8. 用户登陆/用户信息"></a>8. 用户登陆/用户信息</h2><pre><code>复杂的逻辑
+
+函数
+    wx.login(Object object)  登陆函数
+    wx.checkSession(Object object)  检查是否登陆过期
+
+
+获取用户信息:
+    &lt;1&gt; 某个界面, 添加一个按钮, 类型注意是  open-type=&quot;getUserInfo&quot;
+        &lt;button  open-type=&quot;getUserInfo&quot; bindgetuserinfo=&quot;getUserInfo&quot;&gt; 获取头像昵称 &lt;/button&gt;
+
+    &lt;2&gt; 获取用户信息
+        getUserInfo: function (e) {
+            //e.detail.userInfo
+
+            //昵称
+            e.detail.userInfo.nickName
+
+            //头像
+            e.detail.userInfo.avatarUrl
+        }
+
+
+项目:
+    注意: 不仅仅是拿到昵称和头像
+
+    &lt;1&gt; 微信小程序 调用wx.login 获取一个code
+
+    &lt;2&gt; 微信小程序通过wx.request发送code给自己的服务器
+
+    &lt;3&gt; 服务器执行  auth.code2Session 发请求给微信服务器
+        appid appsecret(上线前注册微信小程序账号, 得到这两个), code
+        返回 openid, session_key, 做出处理, 生成账号, 返回给小程序
+</code></pre><h2 id="9-状态-网络状态"><a href="#9-状态-网络状态" class="headerlink" title="9. 状态 - 网络状态"></a>9. 状态 - 网络状态</h2><pre><code>获取和监控网络状态
+
+总结:
+    获取当前网络状态  wx.getNetworkType()
+    监控网络状态变化 wx.onNetworkStatusChange()
+</code></pre><p>##10. 设备</p>
+<pre><code>从相册选择图片(必用, 上传头像)
+
+    q.基本使用
+        wx.chooseImage() 
+
+        注意: 选择图片既可以从相册选择, 也可以拍照
+
+打电话(用的很多, )
+
+    q.基本使用
+        wx.makePhoneCall()
+
+
+扫二维码
+
+    // 只允许从相机扫码
+    wx.scanCode({
+        onlyFromCamera: false,
+        success(res) {
+            console.log(res)
+
+            //扫码结果 res.result
+            self.setData({
+            result: res.result
+            })
+        }
+    })
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/微信小程序-基础知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2261,153 +2650,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/模板字符串/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/23/模板字符串/" class="post-title-link" itemprop="url">模板字符串</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-23 14:36:03 / 修改时间：14:47:14" itemprop="dateCreated datePublished" datetime="2019-02-23T14:36:03+08:00">2019-02-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p><strong>ES5 ES6字符串的区别</strong></p>
-<p>声明<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> title = <span class="string">"我们是菜鸟!!!!"</span></span><br></pre></td></tr></table></figure></p>
-<p>ES5:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tal1 = <span class="string">'&lt;div&gt;'</span>+</span><br><span class="line">    <span class="string">'&lt;span&gt;'</span>+title+<span class="string">'&lt;/span&gt;'</span></span><br><span class="line"><span class="string">'&lt;/div&gt;'</span></span><br></pre></td></tr></table></figure></p>
-<p>ES6:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tal2 = <span class="string">`</span></span><br><span class="line"><span class="string">&lt;div&gt;</span></span><br><span class="line"><span class="string">    &lt;span&gt;<span class="subst">$&#123;title&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;`</span></span><br></pre></td></tr></table></figure></p>
-<p>console.log(tal1);  //我们是菜鸟!!!!<br>console.log(tal2);  //我们是菜鸟!!!!</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2455,7 +2697,7 @@ document.addEventListener('DOMContentLoaded',function(){
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
