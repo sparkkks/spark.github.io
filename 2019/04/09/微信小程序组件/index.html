@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="微信小程序的组件(html中不同标签)1. 第一部分 - 最常用view                    视图容器  (html - div) text                    文本组件 (html-span) button                  按钮组件 (html-button) image                   图片组件 (html-img)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序组件">
+<meta property="og:url" content="http://yoursite.com/2019/04/09/微信小程序组件/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="微信小程序的组件(html中不同标签)1. 第一部分 - 最常用view                    视图容器  (html - div) text                    文本组件 (html-span) button                  按钮组件 (html-button) image                   图片组件 (html-img)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-09T12:16:27.974Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序组件">
+<meta name="twitter:description" content="微信小程序的组件(html中不同标签)1. 第一部分 - 最常用view                    视图容器  (html - div) text                    文本组件 (html-span) button                  按钮组件 (html-button) image                   图片组件 (html-img)">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/09/微信小程序组件/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>微信小程序组件 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/微信小程序组件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微信小程序组件
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-09 20:14:44 / 修改时间：20:16:27" itemprop="dateCreated datePublished" datetime="2019-04-09T20:14:44+08:00">2019-04-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="微信小程序的组件-html中不同标签"><a href="#微信小程序的组件-html中不同标签" class="headerlink" title="微信小程序的组件(html中不同标签)"></a>微信小程序的组件(html中不同标签)</h1><h2 id="1-第一部分-最常用"><a href="#1-第一部分-最常用" class="headerlink" title="1. 第一部分 - 最常用"></a>1. 第一部分 - 最常用</h2><pre><code>view                    视图容器  (html - div)
+text                    文本组件 (html-span)
+button                  按钮组件 (html-button)
+image                   图片组件 (html-img)
+
+    q. 如何使用image标签
+        添加image标签, 设置sr路径, 路径添加本页面相对于图片相对路径
+
+    q.image的mode常用有哪些?
+        mode默认值是scaleToFill, 不保持纵横比, 会拉伸
+
+
+navigator           页面链接组件 (html-a)
+
+    q.这个组件是干嘛用?
+        实现界面的跳转, 使用这个组件
+
+    q.这个组件如何使用?
+        核心属性:
+            url         跳转的页面路径, 例如  pages/test/test
+                        添加参数    pages/test/test?id=10
+
+            open-type
+                navigate    对应 wx.navigateTo 或 wx.navigateToMiniProgram 的功能    
+                    A=&gt;B  A存在
+                redirect    对应 wx.redirectTo 的功能    
+                    A=&gt;B  A不存在
+                switchTab    对应 wx.switchTab 的功能    
+                    tab(A,B,C)      A=&gt;B
+                reLaunch    对应 wx.reLaunch 的功能    1.1.0
+                    A   重新加载A
+                navigateBack    对应 wx.navigateBack 的功能    1.1.0
+                    A=&gt;B,    B=&gt;A
+                exit    退出小程序，target=&quot;miniProgram&quot;时生效
+                    A,B         退出小程序
+
+        注意:  url中传递的是路径, 就有两种路径,  相对路径和绝对路径
+
+        出错:  直接使用  app.json中路径, 会出错
+
+    q.如何从A界面传值到B界面
+
+        举例:   一个列表页挑战到详情页,  需要传递id到详情页
+                list                detail
+                item1
+                item2
+                item3
+
+        &lt;1&gt;在界面跳转的时候加入参数, 例如&quot;/pages/5-navigate/page2 
+            变成 &quot;/pages/5-navigate/page2?id=10
+        &lt;2&gt; 在第二个界面的onLoad中在options中获取id
+
+练习: 人人界面
+</code></pre><h2 id="2-第二部分-常用小型组件"><a href="#2-第二部分-常用小型组件" class="headerlink" title="2. 第二部分 - 常用小型组件"></a>2. 第二部分 - 常用小型组件</h2><pre><code>input
+    q. input组件常用属性有哪些? 如何使用
+
+        value 值
+        type   默认text
+
+
+        注意: input默认样式没有边框
+
+
+    q. 如何通过一个事件处理函数处理input输入
+
+
+label
+
+radio
+checkbox
+
+slider
+switch
+textarea
+progress
+rich-text
+    q.如何使用
+        添加组件, 设置nodes为一个html字符串
+
+        注意: rich-text 只支持部分标签, 具体看文档,  支持样式, 样式可以写在页面wxss
+                rich-text   img 标签仅支持网络图片
+                    image src=&quot;/assets/img.png&quot;
+                     image src=&quot;http://www.host.com/assets/img.png&quot;   网络图片
+                rich-text   支持class和style, id选择器不支持
+                rich-text   里面事件不可用
+
+icon
+form
+    所有的输入的内容放到form组件内
+    需要给form中输入组件添加name
+    form的最后添加button,  设置form-type=&quot;submit&quot;
+    给form添加事件处理函数  bindsubmit=&quot;dealSubmit&quot;
+
+    注意: form不是必须的, 
+        多个输入组件, 收集输入的数据, 
+        方式1: 每个输入框关联一个变量, 获取这些变量
+        方式2: 所有输入组件放到form中, 每个输入组件记得加上name,  form的submit中得到所有输入组件的数据
+</code></pre><h2 id="3-导航栏-标签栏-没有组件"><a href="#3-导航栏-标签栏-没有组件" class="headerlink" title="3. 导航栏/标签栏(没有组件)"></a>3. 导航栏/标签栏(没有组件)</h2><pre><code>标签栏
+    app.json - tabBar
+
+导航栏
+
+实现一个微信程序框架
+
+Step1: 创建项目
+Step2: 实现4个界面切换(以前navigator, 现在用标签栏)
+    &lt;1&gt; 创建4个界面
+    &lt;2&gt; 在app.json中添加属性 tabBar    (注意: tabBar b是大写)
+            必须有个有属性list, 放标签栏所有标签项的配置, 最少2个,最多5个
+            每个添加  pagePath页面路径
+                text 文本
+                iconPath 正常装填图片
+                selectedIconPath 选择的图片
+
+            注意:  标签显示有条件,  标签栏中某个界面路径必须要挡在pages最前面
+
+    &lt;3&gt;标签栏各种配置
+        &quot;color&quot;:&quot;#ccc&quot;, 
+        &quot;selectedColor&quot;:&quot;#62ee18&quot;,
+        &quot;backgroundColor&quot;:&quot;#fff&quot;,
+        &quot;borderStyle&quot;:&quot;black&quot;,
+        &quot;position&quot;:&quot;bottom&quot;,
+
+
+    &lt;4&gt;全局配置导航栏
+        app.json加在window对象
+            navigationBarBackgroundColor   导航栏背景色
+            navigationBarTextStyle                  导航栏文字样式 white/black
+            navigationBarTitleText                  导航栏文字
+
+
+
+    &lt;5&gt;各页面导航栏配置
+        page.json中, 直接加在配置{}中
+            &quot;navigationBarBackgroundColor&quot;: &quot;#ccc&quot;,
+            &quot;navigationBarTitleText&quot;: &quot;微信&quot;,
+            &quot;navigationBarTextStyle&quot;: &quot;black&quot;
+</code></pre><h2 id="4-滚动-滑动"><a href="#4-滚动-滑动" class="headerlink" title="4. 滚动/滑动"></a>4. 滚动/滑动</h2><pre><code>原生滚动
+    注意1:  界面上内容超出界面高度,  微信小程序自动添加竖直滚动功能
+
+    注意2: 界面内容超度界面宽度,  网页加滚动条,  微信小程序没有加,不会加
+
+    注意3: 界面内 通过  overflow-x:scroll和overflow-y:scroll 实现横向和竖向滚动
+
+
+scroll-view  滚动视图
+
+    q.基本使用
+        写个scroll-view, 里面添加子元素, 可以添加多个子元素, wxss设置scroll-view高度
+        默认不能滚动, 需要通过scroll-x或者scroll-y开启滚动
+
+    q.  设置跳转到某个子元素
+        &lt;1&gt; 每个子元素添加id, 注意id不能以数字开头
+        &lt;2&gt; 定义变量 currentId,  表示当前滚动到子元素的id
+        &lt;3&gt; 给scroll-view添加属性  scroll-into-view=&quot;{{currentId}}&quot;
+
+        &lt;4&gt; 那个按钮点击了, 获取id, 生成最新currentId,   同步数据 this.setData()
+
+
+swiper              滑块视图容器(轮播图组件)
+    q.如何实现轮播图
+            html - 自己实现(技术不强, 很烂)
+            html - swiper2/swiper4, superslide
+            微信小程序 - swiper组件
+
+    q.如何实现- 最简单
+        &lt;swiper-item wx:for=&quot;{{list}}&quot; wx:key=&quot;{{index}}&quot;&gt;
+            &lt;image src=&quot;{{item.img}}&quot;&gt;&lt;/image&gt;
+        &lt;/swiper-item&gt;
+
+    q. 添加小圆点
+        使用属性: 
+            indicator-dots   是否显示
+            indicator-color  默认颜色
+            indicator-active-color  激活颜色
+
+    q.如何设置循环滚动
+        circular = true
+
+    q.设置自动滚动
+        autopaly=true
+
+    q.设置间隔时间
+         interval=&apos;3000&apos;  单位是毫秒
+
+    q.如何监控显示滚动到第几个?
+        bindchange=&quot;dealChange&quot;
+        事件处理函数中, e.detial会有当前的序号
+
+    q.如何实现竖向轮播图
+        vertical=&quot;true&quot;
+
+
+refresh
+    下拉刷新 - 网络数据 - 重新下载新的数据
+
+    &lt;1&gt; app.josn的window中, 或者在page.json添加一个属性, 开启下拉刷新
+            &quot;enablePullDownRefresh&quot;:true
+
+    &lt;2&gt; 每个界面生命周期函数  onPullDownRefresh: function () 会执行
+
+            常见操作: 
+                page=1
+                下载数据  downloadData
+
+    &lt;3&gt; downloadData
+            现在: setTimeout 延时
+            以后: 发起网络请求
+
+            注意: 请求完成之后  下拉刷新 - 让新的数据替换旧的的数据
+                this.setData({
+                    list:list
+                })
+
+loadmore
+    加载更多 - 界面很多条数据, 滚动到最底部, 加载更多, 下载新的数据, 附加在原来数据的后面
+
+    &lt;1&gt;每个界面生命周期函数  onReachBottom: function () 会执行
+
+        常见操作: 
+                page+=1
+                下载数据  downloadData
+
+    &lt;2&gt; downloadData中
+        注意: 请求完成之后  下拉刷新 - 让新的数据附加到原来数据的后面
+</code></pre><h2 id="5-多媒体"><a href="#5-多媒体" class="headerlink" title="5.多媒体"></a>5.多媒体</h2><pre><code>q.微信小程序中支持的媒体形式有哪些?
+
+    image 图片组件
+    audio 音频组件
+    video 视频
+    camara 摄像
+    live-pusher  在线推送
+    live-player 在线播放
+
+video 播放视频
+
+    q. 如何播放视频
+        html4 - flash / 浏览器插件(快播/西瓜视频/百度视频)
+        html5 - video标签
+        微信小程序  video 标签
+
+    q.iOS和Android同时支持的格式
+        mp4, 3gp, m3u8流媒体格式
+
+    q. video最简单的使用方式是啥?
+        先添加video标签, 设置src
+            src可以是本地视频, 除非视频特别小, 不要放在本地
+            src可以是远程网址  (推荐的方式)
+
+    q.常见的属性有哪些?
+        src   本地地址, 网络地址
+        duration    默认就是视频长度, 也可以设置, 一般不设置
+        .....
+
+    q.如何使用弹幕 *****
+        &lt;1&gt; 开启弹幕
+            enable-danmu=&quot;true&quot;
+
+        &lt;2&gt;设置弹幕数据   danmu-list=&quot;{{list}}&quot;
+            [
+                {
+                    text:
+                    color:
+                    time:
+                }
+            ]
+
+        &lt;3&gt;如何添加弹幕
+            数组中添加对象
+            {
+                text:
+                color:
+                time:
+            }
+
+    q.如何使用常用事件处理函数
+        bindplay
+        bindpause
+        bindended           播放列表 - 自动播放下一个
+        binderror
+
+    q.如何通过js去操作视频组件
+
+        &lt;1&gt; 给组件添加id
+        &lt;2&gt; 通过函数 wx.createVideoContext(&apos;myVideo&apos;)  创建视频上下文
+                理解: 得到了视频组件对应的对象
+        &lt;3&gt; 执行操作
+            paly()
+            pause()
+            stop()
+            ....
+
+
+
+
+audio 播放音频
+
+    q.微信小程序中如何播放音乐
+        方式1: 使用audio组件 ,1.6.0不维护了, 推荐 InnerAudioContext
+        方式2: 使用InnerAudioContext
+
+    q.支持哪些音乐格式
+        m4a
+        mp3   ***最多
+        wav
+        aac
+
+    q.如何使用
+        先创建对象
+        在设置src属性
+        最后执行play()
+
+    q.如何控制音量
+        &lt;1&gt; 添加了slider  min=0 max=1 step=0.01
+        &lt;2&gt; slider添加处理事件
+            获取当前值  e.detail.value 
+        &lt;3&gt; 设置当前音量
+            this.audioContext.volume = e.detail.value
+
+    q.如何显示进度?
+        &lt;1&gt; 添加 progress
+        &lt;2&gt; 定义变量   pecent
+        &lt;3&gt; 监听 音频 进度更新事件
+            audioContext.onTimeUpdate(()=&gt;{
+
+            })
+</code></pre><h2 id="6-地图"><a href="#6-地图" class="headerlink" title="6.地图"></a>6.地图</h2><pre><code>location 定位
+
+map 组件
+
+
+1. 简介
+    q.定位和地图在什么地方使用？ 作用
+
+        通讯类： 同城交友，摇一摇，漂流瓶， 附近的人
+            陌陌
+
+        购物类
+        旅游类
+
+    q.需求
+        获取当前的位置 
+            H5  定位API - 授权
+            微信小程序 API
+
+        获取当前的城市
+            现先获取经纬度， 在获取（百度api）当前城市
+
+
+        显示地图
+            APP 商家，餐馆， 位置
+
+        导航
+            地图导航
+
+2. 定位
+    q. 在地球上如何进行定位？
+        GPS卫星
+        北斗导航系统
+
+    q.经纬度
+        经度       360度，  东经180度， 西经180度，  格林尼治天文台 0度
+        纬度       赤道0度， 向北一直到北极， 北纬90，  南边类型
+
+
+    q.当前经纬度
+        40.1451662768,116.2895107269
+
+
+        //40.146648
+        //116.290785
+
+    q.通过API获取经纬度
+        &lt;1&gt; 添加权限
+            //app.json加入
+            &quot;permission&quot;: {
+                &quot;scope.userLocation&quot;: {
+                &quot;desc&quot;: &quot;你的位置信息将用于小程序位置接口的效果展示&quot;
+                }
+            }
+
+        &lt;2&gt; 调用wx.getLocation() 函数
+            var self = this
+
+            //注意: type一般选择gcj02, 高德地图,腾讯地图默认支持
+            //  res返回地理信息,  res.longitude是经度, res.latitude是纬度
+            wx.getLocation({
+                type:&quot;gcj02&quot;,
+                altitude:true,
+                success: function (res) {
+
+                    console.log(res)
+
+                    self.setData({
+                    res:res
+                    })
+
+
+                },
+            })
+
+3.地图
+
+    q.基本显示
+        //添加map标签
+        &lt;map&gt;&lt;/map&gt;
+
+    q.如何显示当前区域
+        longitude=
+        latitude=
+        scale
+
+    q.地图覆盖物
+
+        markers 大头针
+
+        polyline 折线(路线)
+
+        circles 圆  (圆形区域)
+
+        polygons 多边形
+</code></pre>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/18/弹性容器/" rel="next" title="弹性容器">
+                <i class="fa fa-chevron-left"></i> 弹性容器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序的组件-html中不同标签"><span class="nav-number">1.</span> <span class="nav-text">微信小程序的组件(html中不同标签)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-第一部分-最常用"><span class="nav-number">1.1.</span> <span class="nav-text">1. 第一部分 - 最常用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-第二部分-常用小型组件"><span class="nav-number">1.2.</span> <span class="nav-text">2. 第二部分 - 常用小型组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-导航栏-标签栏-没有组件"><span class="nav-number">1.3.</span> <span class="nav-text">3. 导航栏/标签栏(没有组件)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-滚动-滑动"><span class="nav-number">1.4.</span> <span class="nav-text">4. 滚动/滑动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-多媒体"><span class="nav-number">1.5.</span> <span class="nav-text">5.多媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-地图"><span class="nav-number">1.6.</span> <span class="nav-text">6.地图</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'b6194d2e8a67bb9fe0e0',
+    clientSecret: 'a21aa677f489f2131d11cad52df6894d23d6cb5e',
+    repo: 'sparkkks.github.io',
+    owner: 'sparkkks',
+    admin: ['sparkkks'],
+    id: md5(location.pathname),
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
