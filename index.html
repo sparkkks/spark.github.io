@@ -285,6 +285,339 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/微信小程序-基础知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/09/微信小程序-基础知识/" class="post-title-link" itemprop="url">微信小程序--基础知识</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-09 23:27:57 / 修改时间：23:30:46" itemprop="dateCreated datePublished" datetime="2019-04-09T23:27:57+08:00">2019-04-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="微信小程序基础"><a href="#微信小程序基础" class="headerlink" title="微信小程序基础"></a>微信小程序基础</h1><p>##1. 微信小程序介绍</p>
+<pre><code>q. 什么是微信小程序, 优势是什么, 劣势是什么?
+
+    微信小程序是腾讯集团为微信开发中实现编写App的技术, 
+    可以使用js语言和微信小程序相关组件, API编写App
+    运行在微信环境之下
+
+    优势:  1.背靠腾讯爸爸, 流量比较大
+                2. 跨平台特性,  写App, 以前iOS, Android, 现在直接写
+                3. 提供的功能相对比较丰富的, 比web开发功能丰富
+                4. 界面使用数据绑定机制,  帮助降低开发难度
+                5. 使用人群比较广, 很多小的公司, 小商铺都需要做微信小程序
+
+    劣势:  受到腾讯控制比较强, 限制比较多......
+
+q.相关资源资料
+    官网:  https://mp.weixin.qq.com/cgi-bin/wx
+    文档:  https://developers.weixin.qq.com/miniprogram/dev/index.html
+</code></pre><p>##2. 微信小程序环境搭建</p>
+<pre><code>q.如何下载开发者工具
+    地址: https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html
+
+    注意:  分为win32, win64, macos
+
+q.如何安装开发者工具
+
+    直接安装
+
+q.如何启动进入工具
+
+    注意: 启动需要扫码登陆, 让电脑一直联网
+</code></pre><p>##3. 项目创建</p>
+<pre><code>q.如何创建项目
+
+    &lt;1&gt;先创建一个空文件夹
+    &lt;2&gt;打开开发者工具, 选择小程序
+    &lt;3&gt;输入信息
+            项目名称随意
+            目录选择刚才的空文件夹
+            AppId 暂时使用测试号
+            语言选择js
+    &lt;4&gt;点击创建
+
+q.开发者工具各个区域,按钮的功能?
+    菜单栏
+    工具栏
+    模拟器
+    代码编辑器
+    调试区域
+
+q.项目中各个文件的解释
+    project.config.json  项目配置文件
+        重要属性 appid, projectname
+    app.js  程序入口文件
+        主要创建了一个App对象, 表示整个程序, 有个函数onLanch, 自动执行, 程序加载执行
+
+    app.json
+        重要属性 pages, 所有界面都要把地址放在这儿
+        重要属性 window, 配置颜色
+        重要属性 tabBar,  添加底部标签栏
+
+    app.wxss 样式文件, 放的就是css, 里面加的样式, 所有界面通过
+
+
+    一个界面由4个文件构成
+        test.wxml               界面结构文件, 里面类似html, 放的是微信小程序组件
+        test.wxss               界面样式文件, 里面就是css,   样式优先级要比 app.wxss要高
+        test.js                 界面逻辑文件,  创建Page对象, 
+                                核心函数  onLoad, 界面加载执行
+        test.json               页面配置文件, 这里面配置优先级要比app.json高
+</code></pre><p>##4. 页面的创建</p>
+<pre><code>q.如何通过app.json的pages创建新页面?
+
+    在pages添加路径, 保存自动创建
+
+    特别注意:  pages第一个路径, 就是默认显示首页
+
+q.如何通过新建文件, 新建界面
+    &lt;1&gt; 先在pages新建文件夹
+    &lt;2&gt; 在文件夹里面 新建Page, 
+
+    注意:  同时生成4个文件, 会把路径加到pages中
+</code></pre><p>##5. 第一个简易程序<br>    计算两数之和<br>    核心知识:<br>        <1> wxml中添加组件<br>        <2>wxss中添加样式<br>        <3> 如何js中数据, 显示到wxml   数据绑定机制<br>        <4> 界面中输入框改变数据, 如何同步到js中<br>        <5> 如何修改数据, 界面同步显示</5></4></3></2></1></p>
+<pre><code>步骤:
+    Step1: 构建界面
+        view  ==&gt; div
+        text ===&gt; span
+        input ===&gt; input
+        button ===&gt; button
+        注意:  input  默认没有边框,  100%宽度
+                    按钮 默认100%宽度
+
+    Step2: 添加样式
+        和css类型, class和id, 添加样式
+
+    Step3:  如何把js中的数据, 显示到界面上
+        思路:  先拿到dom节点, 再去操作dom节点,  微信小程序中,没有dom, 没有bom, html事件不支持
+        新思路:  数据渲染到页面中, 通过修改数据, 页面自动更新
+
+        注意:  格式    {{变量名}}      js的data中定义变量
+
+    Step4: 修改js的变量, 如何让界面更新
+
+        js中修改data中的值, 不要直接修改, 而是要使用  
+        this.setData({
+            num1: 100 
+        })
+
+    Step5: 输入框中值改变了, 如何同步到变量?
+        input添加bindinput对应的事件处理函数
+
+        事件处理函数参数event中detail.value是最新的值
+
+        最新的值存储起来,  更新到data中, 实现效果
+        &lt;input bindinput=&quot;dealInput1&quot;&gt;
+        dealInput1(event){
+            this.setData({
+            num1: event.detail.value
+            })
+        },
+</code></pre><p>##6.  数据绑定机制</p>
+<pre><code>解决问题: 如何把不同的数据渲染到网页中
+
+q. {{}}能放什么?
+    能放表达式    10*(2-4)
+
+q.data中普通变量如何渲染?
+    sum:10
+    {{sum}}
+
+q.data中有个数组如何渲染 - [循环渲染]
+
+   数据:     list:[10,20,30,40,50]
+
+    渲染: 
+    &lt;view wx:for=&quot;{{list}}&quot; wx:key=&quot;{{index}}&quot;&gt;
+        {{index}} - {{item}}
+    &lt;/view&gt;
+
+    注意:  index和item是默认值
+
+    注意:  一种情况 数组中不是普通数据, 而是一个一个对象, 渲染时候
+     &lt;view wx:for=&quot;{{goods}}&quot; wx:key=&quot;{{index}}&quot;&gt;
+        &lt;view&gt;===============&lt;/view&gt;
+        &lt;view&gt;{{item.id}}&lt;/view&gt;
+        &lt;view&gt;{{item.name}}&lt;/view&gt;
+        &lt;view&gt;{{item.num}}&lt;/view&gt;
+        &lt;view&gt;{{item.price}}&lt;/view&gt;
+    &lt;/view&gt;
+
+q.如何显示或者隐藏一个组件
+   数据:    isShow:false
+
+    界面:  
+         &lt;view wx:if=&quot;{{isShow}}&quot;&gt;
+            我是内容内容
+        &lt;/view&gt;
+</code></pre><p>##7.  生命周期函数</p>
+<pre><code>q.生命周期函数是什么, 作用是什么?
+    一个页面有生命周期,   创建, 显示, 销毁
+    生命周期函数就是微信小程序提供的一些钩子函数, 自动执行的, 在这些钩子函数中执行一些我们自己的操作
+
+q.生命周期函数有哪些?
+    onLoad: function (options)     页面加载执行, 执行一次, options上个界面的参数
+    onReady: function ()              监听页面初次渲染完成
+    onShow: function ()             监听界面显示,  界面显示一次, 执行一次
+    onHide: function ()             监听页面隐藏, 每次隐藏执行一次
+    onUnload: function ()       监听页面卸载,  一次
+    onPullDownRefresh: function ()      监听用户下拉
+    onReachBottom: function ()              监听到达页面底部,  实现上啦加载更多
+    onShareAppMessage: function ()      监听点击分享
+
+    介绍, 具体使用还在以后
+</code></pre><p>##8. 简易计算器</p>
+<pre><code>功能:
+    计算器, 支持常用数学计算, 支持整数, 支持小数
+        计算支持  + - * / %  +/-
+        支持 AC 清空数据库
+
+难点: 
+    1. 有些按钮需要特殊布局
+        {
+            title:&quot;1&quot;,
+            className:&quot;btn zero&quot;
+        }
+    2.多个按钮, 用同一个事件处理函数处理, 如何区分多个按钮
+        &lt;button bindtap=&quot;dealTap&quot; id=&quot;10&quot;&gt;
+
+    3.如何实现数学计算
+        难的 - 表达式 =&gt; 表达式计算问题 -&gt; 算法 -&gt; 栈,  中序表达式转成后序表达式
+        解决:  用第三方库
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/微信小程序组件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2075,151 +2408,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/es6模块定义/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/22/es6模块定义/" class="post-title-link" itemprop="url">es6模块定义</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-22 16:27:29 / 修改时间：16:41:53" itemprop="dateCreated datePublished" datetime="2019-02-22T16:27:29+08:00">2019-02-22</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="es6模块定义"><a href="#es6模块定义" class="headerlink" title="es6模块定义"></a>es6模块定义</h1><p><strong>在es6中 从语法层面增加了模块,支持export和import关键字:</strong><br><strong>①.export 导出(输出) 模块接口</strong><br><strong>②.import 接收 (输入) 模块接口</strong></p>
-<p><strong>一个独立的文件就是封装好的模块 外部无法访问模块内部的细节 只能通过模块export返回类表来访问</strong></p>
-<p><strong>导入接口列表</strong><br><strong>①.模块文件必须设置路径 哪怕是”./“ 不可省略后缀</strong><br><strong>②.模块有预编译的声明提升</strong></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2267,7 +2455,7 @@ document.addEventListener('DOMContentLoaded',function(){
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
